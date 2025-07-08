@@ -5,8 +5,8 @@ import { Upload, Search, CheckCircle, History } from "lucide-react"
 const features = [
   {
     icon: <Upload className="h-8 w-8 text-green-700 mb-2" />,
-    title: "Upload Gambar Daun Anggur",
-    description: "Unggah foto daun anggur yang ingin Anda klasifikasikan.",
+    title: "Upload Gambar Daun Tomat",
+    description: "Unggah foto daun Tomat yang ingin Anda klasifikasikan.",
   },
   {
     icon: <Search className="h-8 w-8 text-green-700 mb-2" />,
