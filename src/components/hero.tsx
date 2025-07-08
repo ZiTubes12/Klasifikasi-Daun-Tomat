@@ -35,10 +35,6 @@ export function Hero() {
               <Zap className="mr-2 h-5 w-5" />
               Mulai Klasifikasi
             </Button>
-            <Button size="lg" variant="outline" className="border-white/30 bg-white/10 text-white hover:bg-white/20">
-              <Info className="mr-2 h-5 w-5" />
-              Tentang Website
-            </Button>
           </div>
         </div>
 
