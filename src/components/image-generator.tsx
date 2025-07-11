@@ -12,6 +12,7 @@ const TREATMENT_MAP: Record<string, string> = {
   "Tomato Septoria_leaf spot": "Hindari penyiraman dari atas, buang daun terinfeksi, dan gunakan fungisida.",
   "Tomato Target_Spot": "Gunakan fungisida yang sesuai dan jaga kebersihan lahan.",
   "Tomato healthy": "Tanaman sehat, lakukan pemantauan rutin dan perawatan standar.",
+  "not_a_tomato_plant": "Ini bukan daun tanaman tomat. Silakan unggah gambar daun tanaman tomat yang benar."
 }
 
 // Mapping label ke link video YouTube
@@ -21,6 +22,7 @@ const VIDEO_MAP: Record<string, string> = {
   "Tomato Septoria_leaf spot": "https://www.youtube.com/watch?v=HTFdohZbeAo",
   "Tomato Target_Spot": "https://www.youtube.com/watch?v=4QkQbQn6p9C",
   "Tomato healthy": "https://www.youtube.com/watch?v=5QkQbQn6p9D",
+  "not_a_tomato_plant": ""
 }
 
 export function ImageGenerator() {
@@ -118,6 +120,16 @@ export function ImageGenerator() {
                     <div className="text-gray-500 text-center mb-4">No image selected</div>
                   )}
                   {isNotTomato ? (
+                    <div className="flex flex-col items-center justify-center w-full mt-4">
+                      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="mb-2">
+                        <line x1="18" y1="6" x2="6" y2="18" stroke="#e11d48" strokeWidth="2" strokeLinecap="round"/>
+                        <line x1="6" y1="6" x2="18" y2="18" stroke="#e11d48" strokeWidth="2" strokeLinecap="round"/>
+                      </svg>
+                      <div className="text-red-600 font-bold text-center">
+                        Ini bukan gambar daun tanaman tomat, silakan unggah kembali daun tanaman tomat
+                      </div>
+                    </div>
+                  ) : classification && classification.label === "not_a_tomato_plant" ? (
                     <div className="flex flex-col items-center justify-center w-full mt-4">
                       <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="mb-2">
                         <line x1="18" y1="6" x2="6" y2="18" stroke="#e11d48" strokeWidth="2" strokeLinecap="round"/>
