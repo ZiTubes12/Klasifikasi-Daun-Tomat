@@ -119,7 +119,10 @@ export function ImageGenerator() {
                   )}
                   {isNotTomato ? (
                     <div className="flex flex-col items-center justify-center w-full mt-4">
-                      <img src="/window.svg" alt="Not tomato leaf" className="w-20 h-20 mb-2" />
+                      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="mb-2">
+                        <line x1="18" y1="6" x2="6" y2="18" stroke="#e11d48" strokeWidth="2" strokeLinecap="round"/>
+                        <line x1="6" y1="6" x2="18" y2="18" stroke="#e11d48" strokeWidth="2" strokeLinecap="round"/>
+                      </svg>
                       <div className="text-red-600 font-bold text-center">
                         Ini bukan gambar daun tanaman tomat, silakan unggah kembali daun tanaman tomat
                       </div>
