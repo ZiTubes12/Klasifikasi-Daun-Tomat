@@ -39,6 +39,7 @@ export function ImageGenerator() {
   const [classification, setClassification] = useState<null | { label: string; prob: string }>(null)
   const [treatment, setTreatment] = useState<string | null>(null)
   const [isUploading, setIsUploading] = useState(false)
+  const [isOOD, setIsOOD] = useState(false)
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0] || null
@@ -58,6 +59,7 @@ export function ImageGenerator() {
       return
     }
     setIsUploading(true)
+    setIsOOD(false)
     try {
       const formData = new FormData()
       formData.append("file", selectedFile)
@@ -73,17 +75,26 @@ export function ImageGenerator() {
           (max, curr) => (parseFloat(curr[1]) > parseFloat(max[1]) ? curr : max),
           entries[0]
         );
-        setClassification({ label: maxLabel, prob: maxProb });
-        setTreatment(TREATMENT_MAP[maxLabel] || "Penanganan tidak tersedia.");
+        if (parseFloat(maxProb) < 0.85) {
+          setClassification(null);
+          setTreatment(null);
+          setIsOOD(true);
+        } else {
+          setClassification({ label: maxLabel, prob: maxProb });
+          setTreatment(TREATMENT_MAP[maxLabel] || "Penanganan tidak tersedia.");
+          setIsOOD(false);
+        }
         toast("Image classified successfully!")
       } else {
         setClassification(null)
         setTreatment(null)
+        setIsOOD(false)
         toast("Failed to classify image.")
       }
     } catch (error) {
       setClassification(null)
       setTreatment(null)
+      setIsOOD(false)
       toast("Error uploading or classifying image.")
     } finally {
       setIsUploading(false)
@@ -115,7 +126,9 @@ export function ImageGenerator() {
                   ) : (
                     <div className="text-gray-500 text-center mb-4">No image selected</div>
                   )}
-                  {classification ? (
+                  {isOOD ? (
+                    <div className="text-red-600 font-semibold text-center">Gambar yang diunggah bukan daun tanaman tomat.</div>
+                  ) : classification ? (
                     <div className="w-full mt-4">
                       <div className="text-lg font-semibold text-green-700 mb-2">
                         Hasil Klasifikasi:
@@ -155,7 +168,7 @@ export function ImageGenerator() {
             </Card>
           </div>
           {/* Section video di bawah grid */}
-          {classification && VIDEO_MAP[classification.label] && (
+          {classification && !isOOD && VIDEO_MAP[classification.label] && (
             <div className="mt-12 flex flex-col items-center">
               <div className="font-semibold text-green-800 mb-2 text-lg">Video Penanganan:</div>
               <a
