@@ -7,20 +7,30 @@ import { toast } from "sonner"
 
 // Mapping label ke penanganan
 const TREATMENT_MAP: Record<string, string> = {
-  "Tomato Bacterial spot": "Gunakan fungisida berbahan aktif tembaga dan buang daun yang terinfeksi.",
-  "Tomato Early blight": "Pangkas daun yang terinfeksi, gunakan fungisida, dan rotasi tanaman.",
-  "Tomato Septoria_leaf spot": "Hindari penyiraman dari atas, buang daun terinfeksi, dan gunakan fungisida.",
-  "Tomato Target_Spot": "Gunakan fungisida yang sesuai dan jaga kebersihan lahan.",
-  "Tomato healthy": "Tanaman sehat, lakukan pemantauan rutin dan perawatan standar.",
+  "Tomato__Bacterial_spot": "Gunakan benih sehat, hindari penyiraman dari atas, buang daun terinfeksi, dan gunakan fungisida berbahan tembaga.",
+  "Tomato__Early_blight": "Rotasi tanaman, buang daun terinfeksi, dan gunakan fungisida jika diperlukan.",
+  "Tomato__healthy": "Tanaman sehat, lakukan perawatan rutin dan pemantauan secara berkala.",
+  "Tomato__Late_blight": "Segera buang tanaman terinfeksi, gunakan varietas tahan penyakit, dan semprot fungisida preventif.",
+  "Tomato__Leaf_Mold": "Tingkatkan sirkulasi udara, hindari kelembapan berlebih, dan gunakan fungisida jika diperlukan.",
+  "Tomato__Septoria_leaf_spot": "Buang daun terinfeksi, hindari penyiraman dari atas, dan gunakan fungisida.",
+  "Tomato__Spider_mites_Two_spotted_spider_mite": "Semprot daun dengan air, gunakan insektisida nabati (misal: minyak neem), dan jaga kelembapan lingkungan.",
+  "Tomato__Target_Spot": "Buang daun terinfeksi, gunakan fungisida, dan lakukan rotasi tanaman.",
+  "Tomato__Tomato_mosaic_virus": "Cabut dan musnahkan tanaman terinfeksi, gunakan benih bebas virus, dan jaga kebersihan alat pertanian.",
+  "Tomato__Tomato_YellowLeaf_Curl_Virus": "Cabut tanaman terinfeksi, kendalikan kutu putih, dan gunakan varietas tahan virus."
 }
 
-// Mapping label ke link video YouTube
+// Mapping label ke link edukasi/video
 const VIDEO_MAP: Record<string, string> = {
-  "Tomato Bacterial spot": "https://www.youtube.com/watch?v=QwQnYgkzF5A",
-  "Tomato Early blight": "https://www.youtube.com/watch?v=s9ztEw_r9R4",
-  "Tomato Septoria_leaf spot": "https://www.youtube.com/watch?v=HTFdohZbeAo",
-  "Tomato Target_Spot": "https://www.youtube.com/watch?v=4QkQbQn6p9C",
-  "Tomato healthy": "https://www.youtube.com/watch?v=5QkQbQn6p9D",
+  "Tomato__Bacterial_spot": "https://plantvillage.psu.edu/topics/tomato/infos/diseases_bacterial-spot",
+  "Tomato__Early_blight": "https://plantvillage.psu.edu/topics/tomato/infos/diseases_early-blight",
+  "Tomato__healthy": "https://www.gardeningknowhow.com/edible/vegetables/tomato/growing-tomatoes.htm",
+  "Tomato__Late_blight": "https://plantvillage.psu.edu/topics/tomato/infos/diseases_late-blight",
+  "Tomato__Leaf_Mold": "https://plantvillage.psu.edu/topics/tomato/infos/diseases_leaf-mold",
+  "Tomato__Septoria_leaf_spot": "https://plantvillage.psu.edu/topics/tomato/infos/diseases_septoria-leaf-spot",
+  "Tomato__Spider_mites_Two_spotted_spider_mite": "https://plantvillage.psu.edu/topics/tomato/infos/pests_two-spotted-spider-mite",
+  "Tomato__Target_Spot": "https://www.apsnet.org/edcenter/disandpath/fungalasco/pdlessons/Pages/TargetSpotTomato.aspx",
+  "Tomato__Tomato_mosaic_virus": "https://plantvillage.psu.edu/topics/tomato/infos/diseases_tomato-mosaic-virus",
+  "Tomato__Tomato_YellowLeaf_Curl_Virus": "https://plantvillage.psu.edu/topics/tomato/infos/diseases_tomato-yellow-leaf-curl-virus"
 }
 
 export function ImageGenerator() {
