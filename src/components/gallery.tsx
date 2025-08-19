@@ -18,11 +18,11 @@ const features = [
     title: "Hasil & Saran Penanganan",
     description: "Dapatkan hasil klasifikasi beserta saran penanganan penyakit daun anggur.",
   },
-  {
-    icon: <History className="h-8 w-8 text-green-700 mb-2" />,
-    title: "Riwayat Klasifikasi",
-    description: "Lihat riwayat klasifikasi yang telah Anda lakukan sebelumnya.",
-  },
+  // {
+  //   icon: <History className="h-8 w-8 text-green-700 mb-2" />,
+  //   title: "Riwayat Klasifikasi",
+  //   description: "Lihat riwayat klasifikasi yang telah Anda lakukan sebelumnya.",
+  // },
 ]
 
 export function Fitur() {

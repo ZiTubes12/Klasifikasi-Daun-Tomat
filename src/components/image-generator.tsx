@@ -8,22 +8,24 @@ import { toast } from "sonner"
 // Mapping label ke penanganan
 const TREATMENT_MAP: Record<string, string> = {
   "Tomato Bacterial spot": "Gunakan fungisida berbahan aktif tembaga dan buang daun yang terinfeksi.",
+  "Tomato___Bacterial_spot": "Gunakan fungisida berbahan aktif tembaga (copper-based), buang daun yang terinfeksi, dan hindari percikan air pada daun.",
   "Tomato Early blight": "Pangkas daun yang terinfeksi, gunakan fungisida, dan rotasi tanaman.",
+  "Tomato___Early_blight": "Pangkas daun yang menunjukkan bercak, gunakan fungisida berbahan aktif klorotalonil/mankozeb, perbaiki sirkulasi udara, dan lakukan rotasi tanaman.",
+  "Tomato___Late_blight": "Segera buang bagian tanaman yang terinfeksi, gunakan fungisida sistemik yang sesuai (contoh: metalaksil), hindari penyiraman dari atas, dan jaga jarak tanam.",
+  "Tomato___Leaf_Mold": "Kurangi kelembapan dengan meningkatkan ventilasi, hindari penyiraman malam hari, gunakan fungisida yang sesuai (contoh: klorotalonil), dan bersihkan daun tua di permukaan media.",
   "Tomato Septoria_leaf spot": "Hindari penyiraman dari atas, buang daun terinfeksi, dan gunakan fungisida.",
+  "Tomato___Septoria_leaf_spot": "Hindari penyiraman dari atas, buang daun yang terinfeksi, gunakan mulsa, dan semprot fungisida protektif secara berkala.",
+  "Tomato___Spider_mites_Two_spotted_spider_mite": "Kendalikan tungau dengan semprotan air bertekanan pada bagian bawah daun, gunakan akarisida/mitisida bila perlu, dan dorong musuh alami (misal: Phytoseiulus persimilis).",
   "Tomato Target_Spot": "Gunakan fungisida yang sesuai dan jaga kebersihan lahan.",
+  "Tomato___Target_Spot": "Gunakan fungisida sesuai anjuran, pangkas daun terinfeksi, dan lakukan sanitasi kebun untuk mengurangi sumber inokulum.",
+  "Tomato___Tomato_YellowLeaf_Curl_Virus": "Cabut dan musnahkan tanaman terinfeksi, kendalikan vektor kutu kebul (Bemisia tabaci) dengan insektisida dan perangkap kuning, gunakan varietas tahan, dan pasang mulsa perak.",
+  "Tomato___Tomato_mosaic_virus": "Musnahkan tanaman terinfeksi, sanitasi alat dan tangan (larutan pemutih), hindari merokok/produk tembakau saat menangani tanaman, dan gunakan benih bebas virus.",
   "Tomato healthy": "Tanaman sehat, lakukan pemantauan rutin dan perawatan standar.",
+  "Tomato___healthy": "Tanaman sehat, lanjutkan pemeliharaan rutin (pemupukan seimbang, penyiraman tepat, dan pemantauan hama/penyakit).",
   "not_a_tomato_plant": "Ini bukan daun tanaman tomat. Silakan unggah gambar daun tanaman tomat yang benar."
 }
 
-// Mapping label ke link video YouTube
-const VIDEO_MAP: Record<string, string> = {
-  "Tomato Bacterial spot": "https://www.youtube.com/watch?v=QwQnYgkzF5A",
-  "Tomato Early blight": "https://www.youtube.com/watch?v=s9ztEw_r9R4",
-  "Tomato Septoria_leaf spot": "https://www.youtube.com/watch?v=HTFdohZbeAo",
-  "Tomato Target_Spot": "https://www.youtube.com/watch?v=4QkQbQn6p9C",
-  "Tomato healthy": "https://www.youtube.com/watch?v=5QkQbQn6p9D",
-  "not_a_tomato_plant": ""
-}
+
 
 export function ImageGenerator() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null)
@@ -178,36 +180,7 @@ export function ImageGenerator() {
               </CardContent>
             </Card>
           </div>
-          {/* Section video di bawah grid */}
-          {classification && VIDEO_MAP[classification.label] && (
-            <div className="mt-12 flex flex-col items-center">
-              <div className="font-semibold text-green-800 mb-2 text-lg">Video Penanganan:</div>
-              <a
-                href={VIDEO_MAP[classification.label]}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-700 underline hover:text-blue-900 mb-4"
-              >
-                Lihat Video di YouTube
-              </a>
-              <div className="aspect-video w-full max-w-2xl mx-auto">
-                <iframe
-                  width="100%"
-                  height="400"
-                  src={
-                    VIDEO_MAP[classification.label].includes("watch?v=")
-                      ? "https://www.youtube.com/embed/" +
-                        VIDEO_MAP[classification.label].split("watch?v=")[1].split("&")[0]
-                      : VIDEO_MAP[classification.label]
-                  }
-                  title="YouTube video"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            </div>
-          )}
+          {/* Video YouTube dihilangkan sesuai permintaan */}
         </div>
       </div>
     </section>
