@@ -7,21 +7,16 @@ import { toast } from "sonner"
 
 // Mapping label ke penanganan
 const TREATMENT_MAP: Record<string, string> = {
-  "Tomato Bacterial spot": "Gunakan fungisida berbahan aktif tembaga dan buang daun yang terinfeksi.",
-  "Tomato___Bacterial_spot": "Gunakan fungisida berbahan aktif tembaga (copper-based), buang daun yang terinfeksi, dan hindari percikan air pada daun.",
-  "Tomato Early blight": "Pangkas daun yang terinfeksi, gunakan fungisida, dan rotasi tanaman.",
-  "Tomato___Early_blight": "Pangkas daun yang menunjukkan bercak, gunakan fungisida berbahan aktif klorotalonil/mankozeb, perbaiki sirkulasi udara, dan lakukan rotasi tanaman.",
-  "Tomato___Late_blight": "Segera buang bagian tanaman yang terinfeksi, gunakan fungisida sistemik yang sesuai (contoh: metalaksil), hindari penyiraman dari atas, dan jaga jarak tanam.",
-  "Tomato___Leaf_Mold": "Kurangi kelembapan dengan meningkatkan ventilasi, hindari penyiraman malam hari, gunakan fungisida yang sesuai (contoh: klorotalonil), dan bersihkan daun tua di permukaan media.",
-  "Tomato Septoria_leaf spot": "Hindari penyiraman dari atas, buang daun terinfeksi, dan gunakan fungisida.",
-  "Tomato___Septoria_leaf_spot": "Hindari penyiraman dari atas, buang daun yang terinfeksi, gunakan mulsa, dan semprot fungisida protektif secara berkala.",
-  "Tomato___Spider_mites_Two_spotted_spider_mite": "Kendalikan tungau dengan semprotan air bertekanan pada bagian bawah daun, gunakan akarisida/mitisida bila perlu, dan dorong musuh alami (misal: Phytoseiulus persimilis).",
-  "Tomato Target_Spot": "Gunakan fungisida yang sesuai dan jaga kebersihan lahan.",
-  "Tomato___Target_Spot": "Gunakan fungisida sesuai anjuran, pangkas daun terinfeksi, dan lakukan sanitasi kebun untuk mengurangi sumber inokulum.",
-  "Tomato___Tomato_YellowLeaf_Curl_Virus": "Cabut dan musnahkan tanaman terinfeksi, kendalikan vektor kutu kebul (Bemisia tabaci) dengan insektisida dan perangkap kuning, gunakan varietas tahan, dan pasang mulsa perak.",
-  "Tomato___Tomato_mosaic_virus": "Musnahkan tanaman terinfeksi, sanitasi alat dan tangan (larutan pemutih), hindari merokok/produk tembakau saat menangani tanaman, dan gunakan benih bebas virus.",
-  "Tomato healthy": "Tanaman sehat, lakukan pemantauan rutin dan perawatan standar.",
-  "Tomato___healthy": "Tanaman sehat, lanjutkan pemeliharaan rutin (pemupukan seimbang, penyiraman tepat, dan pemantauan hama/penyakit).",
+  "Tomato__Bacterial_spot": "Gunakan fungisida berbahan aktif tembaga (copper-based), buang daun yang terinfeksi, dan hindari percikan air pada daun.",
+  "Tomato__Early_blight": "Pangkas daun yang menunjukkan bercak, gunakan fungisida berbahan aktif klorotalonil/mankozeb, perbaiki sirkulasi udara, dan lakukan rotasi tanaman.",
+  "Tomato__Late_blight": "Segera buang bagian tanaman yang terinfeksi, gunakan fungisida sistemik yang sesuai (contoh: metalaksil), hindari penyiraman dari atas, dan jaga jarak tanam.",
+  "Tomato__Leaf_Mold": "Kurangi kelembapan dengan meningkatkan ventilasi, hindari penyiraman malam hari, gunakan fungisida yang sesuai (contoh: klorotalonil), dan bersihkan daun tua di permukaan media.",
+  "Tomato__Septoria_leaf_spot": "Hindari penyiraman dari atas, buang daun yang terinfeksi, gunakan mulsa, dan semprot fungisida protektif secara berkala.",
+  "Tomato__Spider_mites_Two_spotted_spider_mite": "Kendalikan tungau dengan semprotan air bertekanan pada bagian bawah daun, gunakan akarisida/mitisida bila perlu, dan dorong musuh alami (misal: Phytoseiulus persimilis).",
+  "Tomato__Target_Spot": "Gunakan fungisida sesuai anjuran, pangkas daun terinfeksi, dan lakukan sanitasi kebun untuk mengurangi sumber inokulum.",
+  "Tomato__Tomato_YellowLeaf_Curl_Virus": "Cabut dan musnahkan tanaman terinfeksi, kendalikan vektor kutu kebul (Bemisia tabaci) dengan insektisida dan perangkap kuning, gunakan varietas tahan, dan pasang mulsa perak.",
+  "Tomato__Tomato_mosaic_virus": "Musnahkan tanaman terinfeksi, sanitasi alat dan tangan (larutan pemutih), hindari merokok/produk tembakau saat menangani tanaman, dan gunakan benih bebas virus.",
+  "Tomato__healthy": "Tanaman sehat, lanjutkan pemeliharaan rutin (pemupukan seimbang, penyiraman tepat, dan pemantauan hama/penyakit).",
   "not_a_tomato_plant": "Ini bukan daun tanaman tomat. Silakan unggah gambar daun tanaman tomat yang benar."
 }
 

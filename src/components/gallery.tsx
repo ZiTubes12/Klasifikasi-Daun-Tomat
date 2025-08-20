@@ -34,9 +34,9 @@ export function Fitur() {
           <p className="text-lg text-gray-600">Website ini membantu Anda mengklasifikasikan penyakit pada daun anggur secara cepat dan akurat</p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 justify-items-center">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
           {features.map((fitur, index) => (
-            <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow flex flex-col items-center text-center p-6">
+            <Card key={index} className="w-full h-full overflow-hidden hover:shadow-lg transition-shadow flex flex-col items-center text-center p-6">
               {fitur.icon}
               <CardContent className="p-0">
                 <h3 className="font-semibold text-lg mb-2">{fitur.title}</h3>
